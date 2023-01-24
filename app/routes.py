@@ -114,7 +114,7 @@ def retrieve_password(email: str):
     user = User.query.filter_by(email=email).first()
     if user:
         msg = Message("your plnetary API password is " + user.password,
-                        sender='admin@planetary-api.com',
+                        sender='admin@planetsapi.com',
                         recipients=[email])
         mail.send(msg)
         return jsonify(message="Password sent to "+email)
